@@ -2,17 +2,30 @@ import React from "react";
 
 export default function Info() {
   return (
-    <section className="min-h-screen py-16 px-6 md:px-12 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden">
-      {/* Fondo decorativo sutil */}
+    <section className="relative min-h-screen py-16 px-6 md:px-12 overflow-hidden">
+      {/* Fondo principal: Imagen real + gradiente oscuro (igual que Hero) */}
+      <div className="absolute inset-0">
+        <img
+          src="https://png.pngtree.com/illustration/20220315/ourmid/pngtree-romantic-starry-sky-aesthetic-healing-dream-moon-girl-planet-cloud-illustration-image_61461.jpg"
+          alt="Fondo abstracto de pensamiento y energía"
+          className="w-full h-full object-cover opacity-60"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-purple-900/70 to-pink-800/80"></div>
+      </div>
+
+      {/* Efectos decorativos flotantes (sobrepuestos al fondo) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse delay-1000"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      {/* Contenido principal — sobre el fondo oscuro */}
+
+      <div className="max-w-4xl mx-auto relative z-10 text-white">
         {/* Título con efecto de desvanecimiento */}
-        <h1 className="text-4xl md:text-5xl font-serif text-gray-800 mb-12 text-center tracking-wide leading-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-purple-700 to-slate-700">
+        <h1 className="text-4xl md:text-5xl font-serif text-white mb-12 text-center tracking-wide leading-tight">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-100 via-purple-100 to-slate-100">
             El cansancio que nos salva
           </span>
         </h1>
@@ -27,19 +40,19 @@ export default function Info() {
                 className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-xl transition-all duration-700 group-hover:scale-105 group-hover:shadow-2xl border-4 border-white/80"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <p className="absolute bottom-4 left-4 text-white text-sm font-light italic">"La quietud es la primera forma de resistencia." — B.-C. Han</p>
             </div>
           </div>
 
           <div className="md:w-2/3 space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed font-sans">
+            <p className="text-lg md:text-xl leading-relaxed font-sans text-white/90">
               Byung-Chul Han nos revela cómo nuestra sociedad ha reemplazado la opresión externa por una <strong>dictadura interna</strong>: ya no hay un amo que te grita, sino tú mismo, convirtiéndote en tu propio gerente, tu productor, tu esclavo entusiasta.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed font-sans">
+            <p className="text-lg md:text-xl leading-relaxed font-sans text-white/90">
               El agotamiento ya no es un accidente... es el precio pagado por convertir cada respiración en una KPI. Pero aquí reside la paradoja: <em>el cansancio negativo no es debilidad, es señal</em>. Es el cuerpo que grita: “¡Deja de correr!”
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed font-sans">
+            <p className="text-lg md:text-xl leading-relaxed font-sans text-white/90">
               En cambio, el <strong>cansancio positivo</strong> — ese que llega tras caminar sin destino, leer bajo la luz del atardecer, o simplemente estar sin hacer nada — es el único espacio donde la creatividad vuelve a nacer. Allí, donde el tiempo no es mercancía, surge la <em>contemplación</em>.
             </p>
           </div>
@@ -48,40 +61,40 @@ export default function Info() {
         {/* Tarjetas simbólicas — tres pilares */}
         <div className="grid md:grid-cols-3 gap-8 mt-16">
           {/* Autoexplotación */}
-          <div className="group p-8 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-white/40 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="group p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/15">
+            <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif text-gray-800 mb-3">Autoexplotación</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="text-xl font-serif text-white mb-3">Autoexplotación</h3>
+            <p className="text-white/80 leading-relaxed text-sm md:text-base">
               No hay jefe. Solo tú, tu agenda, tus metas. Y tu culpa si descansas.
             </p>
           </div>
 
           {/* Lentitud como resistencia */}
-          <div className="group p-8 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-white/40 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="group p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/15">
+            <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif text-gray-800 mb-3">Lentitud como resistencia</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="text-xl font-serif text-white mb-3">Lentitud como resistencia</h3>
+            <p className="text-white/80 leading-relaxed text-sm md:text-base">
               No es pereza. Es rebelión. Pararse. Respirar. Dejar que el tiempo fluya, sin medirlo.
             </p>
           </div>
 
           {/* Comunidad y conexión */}
-          <div className="group p-8 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-white/40 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-            <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-violet-200 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="group p-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/15">
+            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-violet-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-violet-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif text-gray-800 mb-3">Comunidad y conexión</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="text-xl font-serif text-white mb-3">Comunidad y conexión</h3>
+            <p className="text-white/80 leading-relaxed text-sm md:text-base">
               La soledad es el producto del rendimiento. La presencia, el antídoto.
             </p>
           </div>
@@ -89,11 +102,13 @@ export default function Info() {
 
         {/* Citación final con efecto de tinta */}
         <div className="mt-16 text-center">
-          <blockquote className="text-2xl md:text-3xl font-serif text-gray-700 italic leading-relaxed max-w-3xl mx-auto pb-6 border-b-2 border-dashed border-gray-300">
+          <blockquote className="text-2xl md:text-3xl font-serif text-white italic leading-relaxed max-w-3xl mx-auto pb-6 border-b-2 border-dashed border-white/30">
             “No se trata de trabajar menos, sino de vivir más.  
             La verdadera revolución es dejar de ser útil.”
           </blockquote>
-          <p className="text-gray-500 mt-4 text-lg">— Byung-Chul Han, <em>La sociedad de la cansancio</em></p>
+          <p className="text-white/60 mt-4 text-lg font-light">
+            — Byung-Chul Han, <em>La sociedad del cansancio</em>
+          </p>
         </div>
 
         {/* Elemento decorativo final: hojas cayendo suavemente */}
